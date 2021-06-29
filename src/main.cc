@@ -8,7 +8,7 @@ using namespace std;
 
 bool isvalidcc(const string &);
 
-int main()
+int main(void)
 {
 	vector<string> cardNumbers;
 	vector<string>::iterator itr;
@@ -44,10 +44,30 @@ int main()
 	cardNumbers.push_back("5556551555555557");
 	cardNumbers.push_back("6011316011016011");
 
+	try {
+		for(int i = 0; i < cardNumbers.size(); i++)
+		{
+			cout << cardNumbers.at(i) << endl;
+		}
+	} catch(out_of_range& e) {
+		cerr << e.what() << endl;
+	}
+
+	return 0;
+}
+	/*
 	for (int i = 0; i < cardNumbers.size(); i++)
 	{
 		cout << cardNumbers[i] << endl;
 	}
+	*/
+
+	/*
+	for (int i = 1, itr = cardNumbers.begin(); itr != cardNumbers.end(); ++itr, i++)
+	{
+		cout << setw(2) << i << " " << setw(17) << *itr << ((isvalidcc(*itr)) ? " is valid" : " is not valid") << endl;
+	}
+	*/
 
 	/* do not change main.cc */
 	/*
@@ -70,7 +90,7 @@ int main()
 			 << setw(17) << *itr
 			 << ((isvalidcc(*itr)) ? " is valid" : " is not valid") << endl;
 	}
-	*/
 
 	return 0;
 }
+	*/
