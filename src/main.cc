@@ -8,9 +8,9 @@
 
 using namespace std;
 
-
 int main(void)
 {
+	int i = 0;
 	vector<string> cardNumbers;
 	vector<string>::iterator itr;
 
@@ -48,9 +48,27 @@ int main(void)
 	/* sort the vector */
 	sort(cardNumbers.begin(), cardNumbers.end());
 
+	/*
 	for(auto it = cardNumbers.begin(); it != cardNumbers.end(); ++it) {
 		cout << "" << *it << endl;
 	}
+	*/
+
+
+	/*
+   for (i = 1, itr = cardnumbers.begin(); itr != cardnumbers.end(); ++itr, i++) {                              
+     cout << setw(2)  << i << " ".                                                                             
+        << setw(17) << *itr.                                                                                   
+        << ((isvalidcc(*itr)) ? " is valid" : " is not valid") << endl;                                        
+   }                                                                                                           
+   */
+
+   for(itr = cardNumbers.begin(); itr != cardNumbers.end(); ++itr) 
+   {
+		cout << setw(2) << i << " ." << setw(17) << *itr << endl;
+		i += 1;
+   }
+                            
 
 	/*
 	try {
