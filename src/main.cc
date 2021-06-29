@@ -1,12 +1,13 @@
+#include <algorithm>
 #include <iomanip>
 #include <iostream>
+#include <string>
 #include <vector>
 
 #include "cc.h"
 
 using namespace std;
 
-bool isvalidcc(const string &);
 
 int main(void)
 {
@@ -44,6 +45,14 @@ int main(void)
 	cardNumbers.push_back("5556551555555557");
 	cardNumbers.push_back("6011316011016011");
 
+	/* sort the vector */
+	sort(cardNumbers.begin(), cardNumbers.end());
+
+	for(auto it = cardNumbers.begin(); it != cardNumbers.end(); ++it) {
+		cout << "" << *it << endl;
+	}
+
+	/*
 	try {
 		for(int i = 0; i < cardNumbers.size(); i++)
 		{
@@ -52,6 +61,7 @@ int main(void)
 	} catch(out_of_range& e) {
 		cerr << e.what() << endl;
 	}
+	*/
 
 	return 0;
 }
