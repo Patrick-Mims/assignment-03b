@@ -1,11 +1,4 @@
-#include <algorithm>
-#include <iomanip>
-#include <iostream>
-#include <string>
-#include <vector>
-
 #include "cc.h"
-
 
 using namespace std;
 
@@ -46,19 +39,20 @@ int main(void)
 	ccNumbers.push_back("5556551555555557");
 	ccNumbers.push_back("6011316011016011");
 
-	/* sort the vector */
+	/* sort vector */
 	sort(ccNumbers.begin(), ccNumbers.end());
 
+	/* initialize 'it' to start at the first object */
 	it = ccNumbers.begin();
 
+	/* test to see if we're getting data */
 	cout << "it: " << *it << endl;
 
-   for(it; it != ccNumbers.end(); ++it) 
-   {
+	for(it; it != ccNumbers.end(); ++it) 
+	{
 		cout << setw(2) << i++ << ". " << setw(17) << *it << endl;
-
-		isValid(*it);
-   }
+		isValid(it); // how do i pass this pointer to isValid() ?
+	}
                             
    	// << ((isvalidcc(*itr)) ? " is valid" : " is not valid") << endl;                                        
 	return 0;
