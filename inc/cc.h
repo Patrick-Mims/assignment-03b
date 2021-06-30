@@ -11,8 +11,7 @@ using namespace std;
 
 bool isValid(vector<string>::iterator item)
 {
-    /* this passes the value to this function */
-    cout << "I am true: " << *item << endl;
+    cout << "isValid: " << *item << endl;
     return 0;
 }
 

@@ -42,16 +42,17 @@ int main(void)
 	/* sort vector */
 	sort(ccNumbers.begin(), ccNumbers.end());
 
-	/* initialize 'it' to start at the first object */
+	/* initialize by pointing to the first object that is at the beginning of the vector */
 	it = ccNumbers.begin();
 
-	/* test to see if we're getting data */
+	/* test to see if we're getting any data */
 	cout << "it: " << *it << endl;
 
+	/* traverse the vector */
 	for(it; it != ccNumbers.end(); ++it) 
 	{
 		cout << setw(2) << i++ << ". " << setw(17) << *it << endl;
-		isValid(it); // how do i pass this pointer to isValid() ?
+		isValid(it);
 	}
                             
    	// << ((isvalidcc(*itr)) ? " is valid" : " is not valid") << endl;                                        
