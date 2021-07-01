@@ -5,6 +5,8 @@ using namespace std;
 int main(void)
 {
 	int i = 0;
+	string result;
+
 	vector<string> ccNumbers;
 	vector<string>::iterator it;
 
@@ -48,13 +50,20 @@ int main(void)
 	/* test to see if we're getting any data */
 	cout << "it: " << *it << endl;
 
+	/* default string */
+	char all[] = "This is what's going on";
+	string five(all, 4);
+	string title ("Lottery Winner");
+	string dollars (10, '$');
+
+	cout << "Working Title: " << title << " " << dollars << " -> " << all << endl;
+
 	/* traverse the vector */
 	for(it; it != ccNumbers.end(); ++it) 
 	{
-		cout << setw(2) << i++ << ". " << setw(17) << *it << endl;
-		isValid(it);
+		result = ((isValid(it)) ? "Valid" : "Not Valid");
+		cout << setw(2) << i++ << ". " << setw(17) << *it << " [ " << result << " ]" << endl;
 	}
                             
-   	// << ((isvalidcc(*itr)) ? " is valid" : " is not valid") << endl;                                        
 	return 0;
 }

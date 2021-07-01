@@ -9,9 +9,16 @@
 
 using namespace std;
 
+/*
+int validateString(vector<string>::iterator thing)
+{
+
+}
+*/
+
 bool isValid(vector<string>::iterator item)
 {
-    cout << "isValid: " << *item << endl;
+    //    cout << "Status: " << *item;
     return 0;
 }
 
