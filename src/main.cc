@@ -5,65 +5,66 @@ using namespace std;
 int main(void)
 {
 	int count = 0;
-	string result;
+//	string result;
 
-	vector<string> ccNumbers;
+	vector<string> ccNumber;
 	vector<string>::iterator it;
 
-	ccNumbers.push_back("371449635398431");
-	ccNumbers.push_back("4444444444444448");
-	ccNumbers.push_back("4444424444444440");
-	ccNumbers.push_back("4110144110144115");
-	ccNumbers.push_back("4114360123456785");
-	ccNumbers.push_back("4061724061724061");
-	ccNumbers.push_back("5500005555555559");
-	ccNumbers.push_back("5115915115915118");
-	ccNumbers.push_back("5555555555555557");
-	ccNumbers.push_back("6011016011016011");
-	ccNumbers.push_back("372449635398431");
-	ccNumbers.push_back("4444544444444448");
-	ccNumbers.push_back("4444434444444440");
-	ccNumbers.push_back("4110145110144115");
-	ccNumbers.push_back("4124360123456785");
-	ccNumbers.push_back("4062724061724061");
-	ccNumbers.push_back("5501005555555559");
-	ccNumbers.push_back("5125915115915118");
-	ccNumbers.push_back("5556555555555557");
-	ccNumbers.push_back("6011116011016011");
-	ccNumbers.push_back("372449635397431");
-	ccNumbers.push_back("4444544444444448");
-	ccNumbers.push_back("4444434444544440");
-	ccNumbers.push_back("4110145110184115");
-	ccNumbers.push_back("4124360123457785");
-	ccNumbers.push_back("4062724061724061");
-	ccNumbers.push_back("5541005555555559");
-	ccNumbers.push_back("5125115115915118");
-	ccNumbers.push_back("5556551555555557");
-	ccNumbers.push_back("6011316011016011");
+	ccNumber.push_back("371449635398431");
+	ccNumber.push_back("4444444444444448");
+	ccNumber.push_back("4444424444444440");
+	ccNumber.push_back("4110144110144115");
+	ccNumber.push_back("4114360123456785");
+	ccNumber.push_back("4061724061724061");
+	ccNumber.push_back("5500005555555559");
+	ccNumber.push_back("5115915115915118");
+	ccNumber.push_back("5555555555555557");
+	ccNumber.push_back("6011016011016011");
+	ccNumber.push_back("372449635398431");
+	ccNumber.push_back("4444544444444448");
+	ccNumber.push_back("4444434444444440");
+	ccNumber.push_back("4110145110144115");
+	ccNumber.push_back("4124360123456785");
+	ccNumber.push_back("4062724061724061");
+	ccNumber.push_back("5501005555555559");
+	ccNumber.push_back("5125915115915118");
+	ccNumber.push_back("5556555555555557");
+	ccNumber.push_back("6011116011016011");
+	ccNumber.push_back("372449635397431");
+	ccNumber.push_back("4444544444444448");
+	ccNumber.push_back("4444434444544440");
+	ccNumber.push_back("4110145110184115");
+	ccNumber.push_back("4124360123457785");
+	ccNumber.push_back("4062724061724061");
+	ccNumber.push_back("5541005555555559");
+	ccNumber.push_back("5125115115915118");
+	ccNumber.push_back("5556551555555557");
+	ccNumber.push_back("6011316011016011");
 
-	/* sort vector */
-	sort(ccNumbers.begin(), ccNumbers.end());
+	/* Sort vector */
+	sort(ccNumber.begin(), ccNumber.end());
 
-	/* initialize by pointing to the first object that is at the beginning of the vector */
-	it = ccNumbers.begin();
+	/* Initialize by pointing to the first object that is at the beginning of the vector (ccNumber) */
+	it = ccNumber.begin();
 
-	/* test to see if we're getting any data */
+	isValid(ccNumber, it);
+
+	/*
 	cout << "it: " << *it << endl;
 
-	/* default string */
 	char all[] = "This is what's going on";
 	string five(all, 4);
 	string title ("Lottery Winner");
 	string dollars (10, '$');
 
-	/* traverse the vector */
-	for(it; it != ccNumbers.end(); ++it) 
+	for(it; it != ccNumber.end(); ++it) 
 	{
-		result = isValid(it) ? "Valid" : "Not Valid";
+		result = isValid(*it) ? "Valid" : "Not Valid";
 		cout << setw(2) << count++ << ". " << setw(17) << *it << " [ " << result << " ]" << endl;
 	}
 
 	cout << "Working Title: " << title << " " << dollars << " -> " << all << endl;
-                            
+	*/
+
 	return 0;
 }
