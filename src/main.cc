@@ -4,7 +4,7 @@ using namespace std;
 
 int main(void)
 {
-	int i = 0;
+	int count = 0;
 	string result;
 
 	vector<string> ccNumbers;
@@ -56,14 +56,14 @@ int main(void)
 	string title ("Lottery Winner");
 	string dollars (10, '$');
 
-	cout << "Working Title: " << title << " " << dollars << " -> " << all << endl;
-
 	/* traverse the vector */
 	for(it; it != ccNumbers.end(); ++it) 
 	{
-		result = ((isValid(it)) ? "Valid" : "Not Valid");
-		cout << setw(2) << i++ << ". " << setw(17) << *it << " [ " << result << " ]" << endl;
+		result = isValid(it) ? "Valid" : "Not Valid";
+		cout << setw(2) << count++ << ". " << setw(17) << *it << " [ " << result << " ]" << endl;
 	}
+
+	cout << "Working Title: " << title << " " << dollars << " -> " << all << endl;
                             
 	return 0;
 }
