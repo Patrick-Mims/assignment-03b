@@ -44,8 +44,7 @@ void multiply_two_digits(int array[], int n)
 
 void reverseString(vector<int> &str)
 {
-    int num = 0;
-    int count = 0, sum = 0;
+    int count = 0, digit_one = 0, digit_two = 0, double_digits = 0, num = 0, sum = 0;
 
     vector<int> reversed;
 
@@ -73,12 +72,20 @@ void reverseString(vector<int> &str)
 
     for (auto &at : reversed)
     {
-        if(count % 2 == 0) 
+        if (count % 2 == 0)
         {
-            if((at * 2) > 9) 
+            if ((at * 2) > 9)
             {
+                /* This mess combines a double digit into a single digit */
                 cout << "\nGreater than 10 (double digits): " << (at * 2) << ", ";
-            } else {
+                digit_one = log10((float)at) + 1;
+                digit_two = (at * 2) % 10;
+                double_digits = (digit_one + digit_two);
+                cout << "\nDouble Digits " << double_digits << endl;
+                sum += double_digits;
+            }
+            else
+            {
                 cout << (at * 2) << ", ";
                 sum += (at * 2);
             }
