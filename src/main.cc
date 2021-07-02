@@ -5,12 +5,12 @@ using namespace std;
 int main(void)
 {
 	int count = 0;
-//	string result;
 
 	vector<string> ccNumber;
 	vector<string>::iterator it;
 
 	ccNumber.push_back("371449635398431");
+	/*
 	ccNumber.push_back("4444444444444448");
 	ccNumber.push_back("4444424444444440");
 	ccNumber.push_back("4110144110144115");
@@ -40,6 +40,7 @@ int main(void)
 	ccNumber.push_back("5125115115915118");
 	ccNumber.push_back("5556551555555557");
 	ccNumber.push_back("6011316011016011");
+	*/
 
 	/* Sort vector */
 	sort(ccNumber.begin(), ccNumber.end());
@@ -47,24 +48,8 @@ int main(void)
 	/* Initialize by pointing to the first object that is at the beginning of the vector (ccNumber) */
 	it = ccNumber.begin();
 
-	isValid(ccNumber, it);
-
-	/*
-	cout << "it: " << *it << endl;
-
-	char all[] = "This is what's going on";
-	string five(all, 4);
-	string title ("Lottery Winner");
-	string dollars (10, '$');
-
-	for(it; it != ccNumber.end(); ++it) 
-	{
-		result = isValid(*it) ? "Valid" : "Not Valid";
-		cout << setw(2) << count++ << ". " << setw(17) << *it << " [ " << result << " ]" << endl;
-	}
-
-	cout << "Working Title: " << title << " " << dollars << " -> " << all << endl;
-	*/
+	/* Pass vector by reference to isValid(&vector, &iterator) function */
+	processCreditCard(ccNumber, it);
 
 	return 0;
 }
