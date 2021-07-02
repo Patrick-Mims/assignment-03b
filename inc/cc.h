@@ -11,6 +11,7 @@
 using namespace std;
 
 /* c) Add all digits in the odd places from right to left in the credit card number */
+//vector<int> add_odd_digits(vector<int> &v)
 void add_odd_digits(vector<int> &v)
 {
     int sum = 0;
