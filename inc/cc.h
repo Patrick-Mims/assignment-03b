@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <numeric>
 
 using namespace std;
 
@@ -23,38 +24,72 @@ int addTwoDigits(int digits)
     return digits;
 }
 
-//void reverseString(string str)
-void reverseString(string str)
+void multiply(int array[], int n)
 {
+    //cout << "->" << x << endl;
+    /*
+    x *= x;
+    cout << "((" << x << "))" << endl;
+    */
+}
+
+//void reverseString(string str)
+void reverseString(vector<int> &str)
+//void reverseString(const string &card)
+{
+    //cout << "Card: " << str.begin() << endl;
+    for (auto &it : str)
+    {
+        cout << "reversed vector: " << it << " ";
+    }
+    /*
+    vector<int> even;
+    vector<int> odd;
+
     for (int i = str.length() - 1; i >= 0; i--)
     {
         if (i % 2 != 0)
         {
             cout << "[" << str[i] << "]";
         }
+        else
+        {
+            cout << "(" << str[i] << ")" << endl;
+            int num = (int)str[i] - 48;
+            even.push_back(num);
+        }
+        //ccNumber.push_back("371449635398431");
     }
     cout << endl;
+    int sum = 0;
+    cout << "sum: ";
+    cout << accumulate(even.begin(), even.end(), sum) << endl;
+    */
 }
 
 /* Double every digit from right to left. */
 int validateString(const string &card)
 {
+    vector<int> v;
     string c = card;
 
     int i = 0;
 
-    for (char &j : c)
+    for (string::iterator it = c.begin(), end = c.end(); it != end; ++it)
     {
         if (i % 2 == 0)
         {
-            cout << j << endl;
-            //cout << (j * 2) << endl;
+            int num = (int)*it - 48;
+            v.push_back(num);
         }
         i++;
     }
 
-    reverseString(card);
-    cout << "validate string function with c as a string variable: " << c << " length: " << c.length() << endl;
+    for (auto &it : v)
+    {
+        cout << it << " ";
+    }
+    reverseString(v);
 }
 
 bool isValid(const string &card)
