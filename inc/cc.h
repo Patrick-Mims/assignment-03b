@@ -33,62 +33,33 @@ void multiply(int array[], int n)
     */
 }
 
-//void reverseString(string str)
 void reverseString(vector<int> &str)
-//void reverseString(const string &card)
 {
-    //cout << "Card: " << str.begin() << endl;
-    vector<int> even;
+    int num = 0;
+    vector<int> reversed;
 
-    cout << "STR *it: " << endl;
-
+    cout << endl;
+    cout << "Not Reversed" << endl;
     for (auto &it : str)
     {
-        cout << it << " " << endl;
+        cout << it << " ";
     }
-
-    int num = 0;
 
     for (int i = str.size() - 1; i >= 0; i--)
     {
         num = (int)str[i];
-        even.push_back(num);
-        /*
-        if ((int)i % 2 != 0)
-        {
-            cout << "[" << str[i] << "]";
-        }
-        else
-        {
-            cout << "(" << str[i] << ")" << endl;
-            num = (int)str[i] - 48;
-        }
-        */
-        //ccNumber.push_back("371449635398431");
+        reversed.push_back(num);
     }
 
-    cout << "Even" << endl;
-    for (auto &at : even)
+    cout << endl;
+
+    cout << "Reversed" << endl;
+    for (auto &at : reversed)
     {
-        cout << at << " " << endl;
+        cout << at << " ";
     }
+
     /*
-    vector<int> odd;
-
-    for (int i = str.length() - 1; i >= 0; i--)
-    {
-        if (i % 2 != 0)
-        {
-            cout << "[" << str[i] << "]";
-        }
-        else
-        {
-            cout << "(" << str[i] << ")" << endl;
-            int num = (int)str[i] - 48;
-            even.push_back(num);
-        }
-        //ccNumber.push_back("371449635398431");
-    }
     cout << endl;
     int sum = 0;
     cout << "sum: ";
@@ -114,10 +85,12 @@ int validateString(const string &card)
         i++;
     }
 
+    /*
     for (auto &it : v)
     {
         cout << it << " ";
     }
+    */
     reverseString(v);
 }
 
@@ -138,8 +111,6 @@ void processCreditCard(vector<string> &ccNumber, vector<string>::iterator &it)
         result = isValid(*it) ? " valid" : " not valid";
         cout << setw(2) << count++ << ". " << setw(17) << *it << " is" << result << endl;
     }
-
-    //    validateString(item);
 }
 
 #endif
