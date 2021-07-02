@@ -10,12 +10,15 @@
 
 using namespace std;
 
-void addResults()
+/* c) Add all digits in the odd places from right to left in the credit card number */
+void add_odd_digits(vector<int> &v)
 {
-    // step c
+    int sum = 0;
+    cout << "sum: ";
+    cout << accumulate(v.begin(), v.end(), sum) << endl;
 }
 
-int addTwoDigits(int digits)
+int add_two_digits(int digits)
 {
     /* 
         If doubling of a digit results in a two-digit number 
@@ -24,7 +27,7 @@ int addTwoDigits(int digits)
     return digits;
 }
 
-void multiply(int array[], int n)
+void multiply_two_digits(int array[], int n)
 {
     //cout << "->" << x << endl;
     /*
@@ -38,8 +41,8 @@ void reverseString(vector<int> &str)
     int num = 0;
     vector<int> reversed;
 
-    cout << endl;
-    cout << "Not Reversed" << endl;
+    cout << "\nNot Reversed" << endl;
+
     for (auto &it : str)
     {
         cout << it << " ";
@@ -51,14 +54,16 @@ void reverseString(vector<int> &str)
         reversed.push_back(num);
     }
 
-    cout << endl;
+    cout << "\nReversed" << endl;
 
-    cout << "Reversed" << endl;
     for (auto &at : reversed)
     {
         cout << at << " ";
     }
 
+    cout << endl;
+
+    add_odd_digits(reversed);
     /*
     cout << endl;
     int sum = 0;
@@ -109,7 +114,7 @@ void processCreditCard(vector<string> &ccNumber, vector<string>::iterator &it)
     for (it; it != ccNumber.end(); ++it)
     {
         result = isValid(*it) ? " valid" : " not valid";
-        cout << setw(2) << count++ << ". " << setw(17) << *it << " is" << result << endl;
+        //        cout << setw(2) << count++ << ". " << setw(17) << *it << " is" << result << endl;
     }
 }
 
