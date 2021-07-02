@@ -38,12 +38,41 @@ void reverseString(vector<int> &str)
 //void reverseString(const string &card)
 {
     //cout << "Card: " << str.begin() << endl;
+    vector<int> even;
+
+    cout << "STR *it: " << endl;
+
     for (auto &it : str)
     {
-        cout << "reversed vector: " << it << " ";
+        cout << it << " " << endl;
+    }
+
+    int num = 0;
+
+    for (int i = str.size() - 1; i >= 0; i--)
+    {
+        num = (int)str[i];
+        even.push_back(num);
+        /*
+        if ((int)i % 2 != 0)
+        {
+            cout << "[" << str[i] << "]";
+        }
+        else
+        {
+            cout << "(" << str[i] << ")" << endl;
+            num = (int)str[i] - 48;
+        }
+        */
+        //ccNumber.push_back("371449635398431");
+    }
+
+    cout << "Even" << endl;
+    for (auto &at : even)
+    {
+        cout << at << " " << endl;
     }
     /*
-    vector<int> even;
     vector<int> odd;
 
     for (int i = str.length() - 1; i >= 0; i--)
