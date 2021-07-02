@@ -4,18 +4,23 @@
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
+#include <numeric>
 #include <string>
 #include <vector>
-#include <numeric>
 
 using namespace std;
+
+void add_single_digits(int n)
+{
+    cout << "\nAdd all digits in the odd places from right to left in the card number: " << n << endl;
+}
 
 /* c) Add all digits in the odd places from right to left in the credit card number */
 //vector<int> add_odd_digits(vector<int> &v)
 void add_odd_digits(vector<int> &v)
 {
     int sum = 0;
-    cout << "sum: ";
+    cout << "Odd Digits Summed Up: ";
     cout << accumulate(v.begin(), v.end(), sum) << endl;
 }
 
@@ -40,9 +45,11 @@ void multiply_two_digits(int array[], int n)
 void reverseString(vector<int> &str)
 {
     int num = 0;
+    int count = 0, sum = 0;
+
     vector<int> reversed;
 
-    cout << "\nNot Reversed" << endl;
+    cout << "Parsed and not reversed: ";
 
     for (auto &it : str)
     {
@@ -55,22 +62,32 @@ void reverseString(vector<int> &str)
         reversed.push_back(num);
     }
 
-    cout << "\nReversed" << endl;
+    cout << "\nParsed and reversed: ";
 
     for (auto &at : reversed)
     {
         cout << at << " ";
     }
 
-    cout << endl;
+    cout << "\nReversed & Doubled: ";
 
+    for (auto &at : reversed)
+    {
+        if(count % 2 == 0) 
+        {
+            if((at * 2) > 9) 
+            {
+                cout << "\nGreater than 10 (double digits): " << (at * 2) << ", ";
+            } else {
+                cout << (at * 2) << ", ";
+                sum += (at * 2);
+            }
+        }
+        count += 1;
+    }
+
+    add_single_digits(sum);
     add_odd_digits(reversed);
-    /*
-    cout << endl;
-    int sum = 0;
-    cout << "sum: ";
-    cout << accumulate(even.begin(), even.end(), sum) << endl;
-    */
 }
 
 /* Double every digit from right to left. */
@@ -91,18 +108,13 @@ int validateString(const string &card)
         i++;
     }
 
-    /*
-    for (auto &it : v)
-    {
-        cout << it << " ";
-    }
-    */
     reverseString(v);
 }
 
 bool isValid(const string &card)
 {
-    cout << "card number: " << card << endl;
+    cout << "\n******************************" << endl;
+    cout << "Card Number: " << card << endl;
     validateString(card);
     return 0;
 }
