@@ -10,39 +10,28 @@
 
 using namespace std;
 
+/* this is part D of the assignment */
+int sum_the_results(int b, int c)
+{
+    return (b + c);
+}
+
+/* this is part B of the assignment */
 void add_single_digits(int n)
 {
     cout << "\nAdd all digits in the odd places from right to left in the card number: " << n << endl;
 }
 
 /* c) Add all digits in the odd places from right to left in the credit card number */
-//vector<int> add_odd_digits(vector<int> &v)
-void add_odd_digits(vector<int> &v)
+int add_odd_digits(vector<int> &v)
 {
     int sum = 0;
     cout << "Odd Digits Summed Up: ";
     cout << accumulate(v.begin(), v.end(), sum) << endl;
+    return sum;
 }
 
-int add_two_digits(int digits)
-{
-    /* 
-        If doubling of a digit results in a two-digit number 
-        add the two digits to get a single digit number. 
-    */
-    return digits;
-}
-
-void multiply_two_digits(int array[], int n)
-{
-    //cout << "->" << x << endl;
-    /*
-    x *= x;
-    cout << "((" << x << "))" << endl;
-    */
-}
-
-void reverseString(vector<int> &str)
+bool reverseString(vector<int> &str)
 {
     int count = 0, digit_one = 0, digit_two = 0, double_digits = 0, num = 0, sum = 0;
 
@@ -91,7 +80,16 @@ void reverseString(vector<int> &str)
     }
 
     add_single_digits(sum);
-    add_odd_digits(reversed);
+    int odd = add_odd_digits(reversed);
+
+    int total = sum_the_results(odd, sum);
+
+    cout << "Total: " << total << endl;
+
+    if (total % 10 == 0)
+        return 1;
+
+    return 0;
 }
 
 /* Double every digit from right to left. */
@@ -120,9 +118,11 @@ bool isValid(const string &card)
     cout << "\n******************************" << endl;
     cout << "Card Number: " << card << endl;
     validateString(card);
+    cout << "******************************" << endl;
     return 0;
 }
 
+/* process the credit card, shows if the card is valid or invalid */
 void processCreditCard(vector<string> &ccNumber, vector<string>::iterator &it)
 {
     int count = 0;
@@ -131,7 +131,7 @@ void processCreditCard(vector<string> &ccNumber, vector<string>::iterator &it)
     for (it; it != ccNumber.end(); ++it)
     {
         result = isValid(*it) ? " valid" : " not valid";
-        //        cout << setw(2) << count++ << ". " << setw(17) << *it << " is" << result << endl;
+        cout << setw(2) << count++ << ". " << setw(17) << *it << " is" << result << endl;
     }
 }
 

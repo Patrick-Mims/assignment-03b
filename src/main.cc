@@ -6,9 +6,9 @@ int main(void)
 {
 	int count = 0;
 
+	/* create new vector & iterator */
 	vector<string> ccNumber;
 	vector<string>::iterator it;
-
 	ccNumber.push_back("371449635398431");
 	ccNumber.push_back("4444444444444448");
 	ccNumber.push_back("4444424444444440");
@@ -46,7 +46,7 @@ int main(void)
 	/* Initialize by pointing to the first object that is at the beginning of the vector  or (ccNumber) */
 	it = ccNumber.begin();
 
-	/* Pass vector by reference to isValid(&vector, &iterator) function */
+	/* Pass vector by reference to processCreditCard(&vector, &iterator) function */
 	processCreditCard(ccNumber, it);
 
 	return 0;
