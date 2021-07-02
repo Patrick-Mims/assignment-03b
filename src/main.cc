@@ -10,7 +10,6 @@ int main(void)
 	vector<string>::iterator it;
 
 	ccNumber.push_back("371449635398431");
-	/*
 	ccNumber.push_back("4444444444444448");
 	ccNumber.push_back("4444424444444440");
 	ccNumber.push_back("4110144110144115");
@@ -40,12 +39,11 @@ int main(void)
 	ccNumber.push_back("5125115115915118");
 	ccNumber.push_back("5556551555555557");
 	ccNumber.push_back("6011316011016011");
-	*/
 
 	/* Sort vector */
 	sort(ccNumber.begin(), ccNumber.end());
 
-	/* Initialize by pointing to the first object that is at the beginning of the vector (ccNumber) */
+	/* Initialize by pointing to the first object that is at the beginning of the vector  or (ccNumber) */
 	it = ccNumber.begin();
 
 	/* Pass vector by reference to isValid(&vector, &iterator) function */

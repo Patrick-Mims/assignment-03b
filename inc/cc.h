@@ -77,12 +77,9 @@ void reverseString(vector<int> &str)
             if ((at * 2) > 9)
             {
                 /* This mess combines a double digit into a single digit */
-                cout << "\nGreater than 10 (double digits): " << (at * 2) << ", ";
                 digit_one = log10((float)at) + 1;
                 digit_two = (at * 2) % 10;
-                double_digits = (digit_one + digit_two);
-                cout << "\nDouble Digits " << double_digits << endl;
-                sum += double_digits;
+                sum += (digit_one + digit_two);
             }
             else
             {
